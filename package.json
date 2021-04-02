@@ -27,6 +27,7 @@
     "yorkie": "^2.0.0"
   },
   "dependencies": {
+    "@umijs/plugin-analytics": "^0.2.2",
     "prism-react-renderer": "^1.2.0"
   }
 }

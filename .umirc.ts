@@ -52,4 +52,8 @@ export default defineConfig({
     },
   ],
   logo: '/flutter-getx-doc/logo.png',
+  analytics: {
+    // Google Analytics 代码，配置后会启用
+    ga: 'G-WFS7T3W8F2',
+  },
 });
