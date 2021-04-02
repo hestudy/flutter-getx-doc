@@ -33,7 +33,7 @@ GetX建议将网络请求拆分成 `Repository` 与 `Provider` 两层
 
 会出现代码补全提示
 
-![代码提示](/engineer/generate_provider.png)
+![代码提示](/flutter-getx-doc/engineer/generate_provider.png)
 
 带 `dio` 的是基于 [Dio](https://pub.flutter-io.cn/packages/dio) 库的
 
@@ -114,7 +114,7 @@ class HomeApiClient {
 
 会出现代码补全提示
 
-![代码补全提示](/engineer/generate_repository.png)
+![代码补全提示](/flutter-getx-doc/engineer/generate_repository.png)
 
 这将自动为你生成如下代码：
 

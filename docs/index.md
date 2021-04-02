@@ -19,4 +19,4 @@ features:
 footer: Open-source MIT Licensed | Copyright © 2021<br />Powered by [HeStudy](https://github.com/1467602180)
 ---
 
-![GetX](/getx.png)
+![GetX](/flutter-getx-doc/getx.png)

@@ -1,21 +1,7 @@
-# dumi app
+# Flutter GetX Doc
 
-## Getting Started
+由于GetX官方的文档混乱，于是我便整理出来一份文档。
 
-Install dependencies,
+包含了官方的概述和自己的理解以及工程化模式
 
-```bash
-$ npm i
-```
-
-Start the dev server,
-
-```bash
-$ npm start
-```
-
-Build site app,
-
-```bash
-$ npm run build
-```
+使用dumi编写
