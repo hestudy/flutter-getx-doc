@@ -2,6 +2,7 @@
 
 title: 进阶使用
 toc: menu
+order: 1
 
 ---
 
@@ -50,7 +51,7 @@ Get.config(
 
 这些Widgets允许您管理一个单一的值，并保持状态的短暂性和本地性。 我们有Reactive和Simple两种风格。 例如，你可以用它们来切换TextField中的obscureText，也许可以创建一个自定义的可扩展面板（Expandable Panel），或者在"Scaffold "的主体中改变内容的同时修改BottomNavigationBar中的当前索引。
 
-### ValueBuilder
+## ValueBuilder
 
 StatefulWidget的简化，它与.setState回调一起工作，并接受更新的值。
 
@@ -67,7 +68,7 @@ ValueBuilder<bool>(
 ),
 ```
 
-### ObxValue
+## ObxValue
 
 类似于ValueBuilder，但这是Reactive版本，你需要传递一个Rx实例（还记得神奇的.obs吗？自动更新......是不是很厉害？）
 

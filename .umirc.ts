@@ -1,6 +1,9 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
+  base: '/flutter-getx-doc',
+  exportStatic: {},
+  publicPath: '/flutter-getx-doc/',
   title: 'Flutter Getx Doc',
   mode: 'site',
   locales: [['zh-CN', '中文']],
@@ -30,8 +33,18 @@ export default defineConfig({
       path: 'https://github.com/jonataslaw/benchmarks',
     },
     {
+      title: 'API文档',
+      path: 'https://pub.flutter-io.cn/documentation/get/latest/index.html',
+    },
+    {
       title: 'Github',
-      path: 'https://github.com/jonataslaw/getx',
+      children: [
+        { title: 'GetX Github', path: 'https://github.com/jonataslaw/getx' },
+        {
+          title: 'Flutter GetX Doc Github',
+          path: 'https://github.com/1467602180/flutter-getx-doc',
+        },
+      ],
     },
   ],
   logo: '/logo.png',

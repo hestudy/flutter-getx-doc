@@ -1,10 +1,19 @@
 ---
+
 title: 快速上手
----## 创建 Flutter 项目
+order: 3
+
+---
+
+## 创建 Flutter 项目
 
 ```shell
 flutter create my_project
 ```
+
+<Alert type='warning'>
+你也可以直接使用 get create project 创建项目，这将调用flutter create生成项目并自动执行 get init。但是如果你的网络环境不太好，这个命令将会使你卡在flutter的检测更新阶段。
+</Alert>
 
 ## 初始化 GetX 结构
 
@@ -82,7 +91,7 @@ get create page:demo
 get create view:demo on home
 ```
 
-执行上面命令，将会在 module/home 目录下的 view 文件夹里新增一个 demo_view，结构如图
+执行上面命令，将会在 module/home 目录下的 views 文件夹里新增一个 demo_view，结构如图
 
 ```shell
 .
@@ -101,7 +110,7 @@ get create view:demo on home
 get create controller:demo on home
 ```
 
-执行上面命令，将会在 module/home 目录下的 controller 文件夹下新增一个 demo_controller，结构如图
+执行上面命令，将会在 module/home 目录下的 controllers 文件夹下新增一个 demo_controller，结构如图
 
 ```shell
 .
@@ -161,3 +170,196 @@ class DemoView extends GetView<DemoController> {
 ```
 
 是的，你只需要在 GetView 后加上绑定的 controller 即可
+
+## 自定义Controller模板
+
+从本地文件获取模板
+
+```shell
+get create controller:auth with examples/authcontroller.dart on your_folder
+```
+
+从远程获取模板
+
+```shell
+get create controller:auth with 'https://raw.githubusercontent.com/jonataslaw/get_cli/master/samples_file/controller.dart.example' on your_folder
+```
+
+如果你的模板长这样
+
+```dart
+@import
+
+class @controller extends GetxController {
+  final  email = ''.obs;
+  final  password = ''.obs;
+  void login() {
+  }
+
+}
+```
+
+那么生成的Controller就是这样的
+
+```dart
+import 'package:get/get.dart';
+
+class AuthController extends GetxController {
+  final email = ''.obs;
+  final password = ''.obs;
+  void login() {}
+}
+```
+
+## 国际化
+
+## 生成翻译文件
+
+准备好你的语言json文件，将其放入 `assets/locales` 下
+
+例如
+
+`pt_BR.json`
+
+```json
+{
+  "buttons": {
+    "login": "Entrar",
+    "sign_in": "Cadastrar-se",
+    "logout": "Sair",
+    "sign_in_fb": "Entrar com o Facebook",
+    "sign_in_google": "Entar com o Google",
+    "sign_in_apple": "Entar com a  Apple"
+  }
+}
+```
+
+`en_US.json`
+
+```json
+{
+  "buttons": {
+    "login": "Login",
+    "sign_in": "Sign-in",
+    "logout": "Logout",
+    "sign_in_fb": "Sign-in with Facebook",
+    "sign_in_google": "Sign-in with Google",
+    "sign_in_apple": "Sign-in with Apple"
+  }
+}
+```
+
+然后执行生成命令
+
+```shell
+get generate locales assets/locales
+```
+
+这将会为你生成一份翻译文件
+
+```dart
+abstract class AppTranslation {
+
+  static Map<String, Map<String, String>> translations = {
+    'en_US' : Locales.en_US,
+    'pt_BR' : Locales.pt_BR,
+  };
+
+}
+abstract class LocaleKeys {
+  static const buttons_login = 'buttons_login';
+  static const buttons_sign_in = 'buttons_sign_in';
+  static const buttons_logout = 'buttons_logout';
+  static const buttons_sign_in_fb = 'buttons_sign_in_fb';
+  static const buttons_sign_in_google = 'buttons_sign_in_google';
+  static const buttons_sign_in_apple = 'buttons_sign_in_apple';
+}
+
+abstract class Locales {
+
+  static const en_US = {
+   'buttons_login': 'Login',
+   'buttons_sign_in': 'Sign-in',
+   'buttons_logout': 'Logout',
+   'buttons_sign_in_fb': 'Sign-in with Facebook',
+   'buttons_sign_in_google': 'Sign-in with Google',
+   'buttons_sign_in_apple': 'Sign-in with Apple',
+  };
+  static const pt_BR = {
+   'buttons_login': 'Entrar',
+   'buttons_sign_in': 'Cadastrar-se',
+   'buttons_logout': 'Sair',
+   'buttons_sign_in_fb': 'Entrar com o Facebook',
+   'buttons_sign_in_google': 'Entar com o Google',
+   'buttons_sign_in_apple': 'Entar com a  Apple',
+  };
+
+```
+
+## 接入翻译功能
+
+在你的 `GetMaterialApp` 中新增一行
+
+```dart
+GetMaterialApp(
+      ...
+      translationsKeys: AppTranslation.translations,
+      ...
+    )
+```
+
+## 使用
+
+```dart
+Text(
+  'buttons_login'.tr
+)
+```
+
+## 生成Model
+
+准备你的数据json文件，放入 `assets/models` 下
+
+例如：
+
+`user.json`
+
+```json
+{
+  "name": "",
+  "age": 0,
+  "friends": ["", ""]
+}
+```
+
+执行生成命令
+
+```shell
+get generate model on home with assets/models/user.json
+```
+
+将会为你生成一份Model文件和一份 `Provider` 文件，具体查看[网络请求](/engineer/advanced#网络请求)
+
+```dart
+class User {
+  String name;
+  int age;
+  List<String> friends;
+
+  User({this.name, this.age, this.friends});
+
+  User.fromJson(Map<String, dynamic> json) {
+    name = json['name'];
+    age = json['age'];
+    friends = json['friends'].cast<String>();
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['name'] = this.name;
+    data['age'] = this.age;
+    data['friends'] = this.friends;
+    return data;
+  }
+}
+```

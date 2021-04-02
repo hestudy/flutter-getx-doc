@@ -48,7 +48,7 @@ Get有两个不同的状态管理器：简单的状态管理器（GetBuilder）�
 你不需要为一个初始值创建一个get。
 使用 Get 的响应式编程就像使用 setState 一样简单。
 
-### 官方计时器例子
+## 官方计时器例子
 
 首先我们创建我们的变量控制器controller
 
@@ -100,7 +100,7 @@ class Other extends StatelessWidget {
 
 Getx支持 `免上下文(context)` 使用 `路由/snackbars/dialogs/bottomsheets`
 
-### 普通导航
+## 普通导航
 
 导航到新的页面。
 
@@ -167,7 +167,7 @@ Get.to(HomePage());
 
 ```
 
-### 别名导航
+## 别名导航
 
 导航到下一个页面
 
@@ -225,7 +225,7 @@ void main() {
 }
 ```
 
-### 路由传参
+## 路由传参
 
 Get提供高级动态URL，就像在Web上一样。
 
@@ -303,7 +303,7 @@ print(Get.parameters['flag']);
 
 现在，你需要做的就是使用Get.toNamed()来导航你的别名路由，不需要任何context(你可以直接从你的BLoC或Controller类中调用你的路由)，当你的应用程序被编译到web时，你的路由将出现在URL中。
 
-### 中间件
+## 中间件
 
 如果你想通过监听Get事件来触发动作，你可以使用routingCallback来实现。
 
@@ -422,9 +422,9 @@ class Third extends StatelessWidget {
 }
 ```
 
-### 免context导航
+## 免context导航
 
-#### SnackBars
+### SnackBars
 
 用Flutter创建一个简单的SnackBar，你必须获得Scaffold的context，或者你必须使用一个GlobalKey附加到你的Scaffold上。
 
@@ -499,7 +499,7 @@ Get.snackbar(
 
 如果您喜欢传统的SnackBars，或者想从头开始定制，包括只添加一行(Get.snackbar使用了一个强制性的标题和信息)，您可以使用 Get.rawSnackbar();它提供了建立Get.snackbar的RAW API。
 
-#### Dialogs
+### Dialogs
 
 打开Dialogs：
 
@@ -520,7 +520,7 @@ Get.defaultDialog(
 
 对于所有其他的FlutterDialogs小部件，包括cupertinos，你可以使用Get.overlayContext来代替context，并在你的代码中任何地方打开它。 对于不使用Overlay的小组件，你可以使用Get.context。 这两个context在99%的情况下都可以代替你的UIcontext，除了在没有导航context的情况下使用 inheritedWidget的情况。
 
-#### BottomSheets
+### BottomSheets
 
 Get.bottomSheet类似于showModalBottomSheet，但不需要context：
 
@@ -545,7 +545,7 @@ Get.bottomSheet(
 );
 ```
 
-### 嵌套导航
+## 嵌套导航
 
 Get让Flutter的嵌套导航更加简单。 你不需要context，而是通过Id找到你的导航栈。
 
@@ -596,7 +596,7 @@ Navigator(
 
 ## 国际化
 
-### 翻译
+## 翻译
 
 翻译被保存为一个简单的键值字典映射。 要添加自定义翻译，请创建一个类并扩展翻译。
 
@@ -616,7 +616,7 @@ class Messages extends Translations {
 }
 ```
 
-### 使用翻译
+## 使用翻译
 
 只要将.tr追加到指定的键上，就会使用Get.locale和Get.fallbackLocale的当前值进行翻译。
 
@@ -624,7 +624,7 @@ class Messages extends Translations {
 Text('title'.tr);
 ```
 
-### 语言
+## 语言
 
 传递参数给GetMaterialApp来定义语言和翻译。
 
@@ -636,7 +636,7 @@ return GetMaterialApp(
 );
 ```
 
-### 改变语言
+## 改变语言
 
 调用Get.updateLocale(locale)来更新语言环境。然后翻译会自动使用新的locale。
 
@@ -645,7 +645,7 @@ var locale = Locale('en', 'US');
 Get.updateLocale(locale);
 ```
 
-### 系统语言
+## 系统语言
 
 要读取系统语言，可以使用window.locale。
 
