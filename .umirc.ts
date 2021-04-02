@@ -9,6 +9,10 @@ export default defineConfig({
   locales: [['zh-CN', '中文']],
   navs: [
     {
+      title: '国内镜像',
+      path: 'https://hfybbs.gitee.io/flutter-getx-doc/',
+    },
+    {
       title: '快速开始',
       path: '/quick-start',
     },
