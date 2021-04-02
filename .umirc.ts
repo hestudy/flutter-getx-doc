@@ -51,5 +51,5 @@ export default defineConfig({
       ],
     },
   ],
-  logo: '/logo.png',
+  logo: '/flutter-getx-doc/logo.png',
 });
