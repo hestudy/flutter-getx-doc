@@ -3,7 +3,7 @@ import { defineConfig } from 'dumi';
 export default defineConfig({
   base: '/flutter-getx-doc',
   exportStatic: {},
-  publicPath: '/flutter-getx-doc/public/',
+  publicPath: '/flutter-getx-doc/',
   title: 'Flutter Getx Doc',
   mode: 'site',
   locales: [['zh-CN', '中文']],
