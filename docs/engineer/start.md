@@ -1,11 +1,7 @@
 ---
-
 title: 快速上手
 order: 3
-
----
-
-## 创建 Flutter 项目
+---## 创建 Flutter 项目
 
 ```shell
 flutter create my_project
@@ -20,6 +16,8 @@ flutter create my_project
 ```shell
 get init
 ```
+
+**如果执行后卡住，请查看[getx-cli 命令卡住不动？](/engineer/fq#getx-cli命令卡住不动？)**
 
 <Alert type='warning'>不要在旧项目中使用，这个命令将会删除你的 lib 目录并重建</Alert>
 
@@ -171,7 +169,7 @@ class DemoView extends GetView<DemoController> {
 
 是的，你只需要在 GetView 后加上绑定的 controller 即可
 
-## 自定义Controller模板
+## 自定义 Controller 模板
 
 从本地文件获取模板
 
@@ -199,7 +197,7 @@ class @controller extends GetxController {
 }
 ```
 
-那么生成的Controller就是这样的
+那么生成的 Controller 就是这样的
 
 ```dart
 import 'package:get/get.dart';
@@ -215,7 +213,7 @@ class AuthController extends GetxController {
 
 ## 生成翻译文件
 
-准备好你的语言json文件，将其放入 `assets/locales` 下
+准备好你的语言 json 文件，将其放入 `assets/locales` 下
 
 例如
 
@@ -316,9 +314,9 @@ Text(
 )
 ```
 
-## 生成Model
+## 生成 Model
 
-准备你的数据json文件，放入 `assets/models` 下
+准备你的数据 json 文件，放入 `assets/models` 下
 
 例如：
 
@@ -338,7 +336,7 @@ Text(
 get generate model on home with assets/models/user.json
 ```
 
-将会为你生成一份Model文件和一份 `Provider` 文件，具体查看[网络请求](/engineer/advanced#网络请求)
+将会为你生成一份 Model 文件和一份 `Provider` 文件，具体查看[网络请求](/engineer/advanced#网络请求)
 
 ```dart
 class User {
