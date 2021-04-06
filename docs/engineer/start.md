@@ -1,7 +1,9 @@
 ---
 title: 快速上手
 order: 3
----## 创建 Flutter 项目
+---
+
+## 创建 Flutter 项目
 
 ```shell
 flutter create my_project
