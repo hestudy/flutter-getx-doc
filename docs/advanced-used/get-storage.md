@@ -34,11 +34,11 @@ order: 4
 
 GetStorage 是基于内存的，所以速度非常快。他所有的行动都是瞬间的。每个操作的备份都放在磁盘上的容器中。每个容器都有自己的文件。
 
-![read](/advanced-used/get-storage/performance-read.png)
+![read](/flutter-getx-doc/advanced-used/get-storage/performance-read.png)
 
-![write](/advanced-used/get-storage/performance-write.png)
+![write](/flutter-getx-doc/advanced-used/get-storage/performance-write.png)
 
-![delete](/advanced-used/get-storage/performance-delete.png)
+![delete](/flutter-getx-doc/advanced-used/get-storage/performance-delete.png)
 
 ## 引入
 
