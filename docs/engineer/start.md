@@ -304,6 +304,8 @@ abstract class Locales {
 GetMaterialApp(
       ...
       translationsKeys: AppTranslation.translations,
+      locale: Locale('en', 'US'), // 将会按照此处指定的语言翻译
+      fallbackLocale: Locale('pt', 'BR'), // 添加一个回调语言选项，以备上面指定的语言翻译不存在
       ...
     )
 ```
@@ -313,6 +315,10 @@ GetMaterialApp(
 ```dart
 Text(
   'buttons_login'.tr
+)
+// or
+Text(
+  LocaleKeys.button_login.tr
 )
 ```
 
