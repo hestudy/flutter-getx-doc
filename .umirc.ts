@@ -30,7 +30,13 @@ export default defineConfig({
     },
     {
       title: 'GetX Cli',
-      path: 'https://github.com/jonataslaw/get_cli',
+      children: [
+        { title: 'getx_cli', path: 'https://github.com/jonataslaw/get_cli' },
+        {
+          title: 'cn_get_cli',
+          path: 'https://github.com/1467602180/cn_get_cli',
+        },
+      ],
     },
     {
       title: '性能测试',
