@@ -10,7 +10,7 @@ export default defineConfig({
   navs: [
     {
       title: '国内镜像',
-      path: 'https://hfybbs.gitee.io/flutter-getx-doc/',
+      path: 'http://flutter.hfybbs.vip',
     },
     {
       title: '快速开始',
